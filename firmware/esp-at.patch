@@ -1,0 +1,282 @@
+Submodule firmware/esp-at contains modified content
+diff --git a/firmware/esp-at/components/at/src/at_default_config.c b/firmware/esp-at/components/at/src/at_default_config.c
+index 4f1b41ec..333a98fe 100644
+--- a/firmware/esp-at/components/at/src/at_default_config.c
++++ b/firmware/esp-at/components/at/src/at_default_config.c
+@@ -61,6 +61,7 @@ static const esp_at_module_info_t esp_at_module_info[] = {
+     {"MINI-1",          CONFIG_ESP_AT_OTA_TOKEN_ESP32_MINI_1,  CONFIG_ESP_AT_OTA_SSL_TOKEN_ESP32_MINI_1 },   // ESP32-MINI-1
+     {"ESP32-SDIO",      NULL,  NULL },   // ESP32-SDIO
+     {"ESP32-D2WD",      NULL,  NULL },   // ESP32-D2WD
++    {"IOT-ESP-ETH",     CONFIG_ESP_AT_OTA_TOKEN_WROOM32,       CONFIG_ESP_AT_OTA_SSL_TOKEN_WROOM32 },        // esp32 IOT-ESP-ETH
+ #endif
+ 
+ #if defined(CONFIG_IDF_TARGET_ESP32C3)
+diff --git a/firmware/esp-at/components/at/src/at_eth_init.c b/firmware/esp-at/components/at/src/at_eth_init.c
+index e68cbe3f..01b7dc1a 100644
+--- a/firmware/esp-at/components/at/src/at_eth_init.c
++++ b/firmware/esp-at/components/at/src/at_eth_init.c
+@@ -27,10 +27,10 @@
+ #include "string.h"
+ #include "esp_eth.h"
+ 
+-#define CONFIG_AT_ETH_MDC_GPIO         23
+-#define CONFIG_AT_ETH_MDIO_GPIO        18
+-#define CONFIG_AT_ETH_PHY_RST_GPIO     5
+-#define CONFIG_AT_ETH_PHY_ADDR         1
++//#define CONFIG_AT_ETH_MDC_GPIO         23
++//#define CONFIG_AT_ETH_MDIO_GPIO        18
++//#define CONFIG_AT_ETH_PHY_RST_GPIO     4
++//#define CONFIG_AT_ETH_PHY_ADDR         0
+ 
+ bool esp_at_get_eth_default_config(esp_eth_config_t* config)
+ {
+diff --git a/firmware/esp-at/components/customized_partitions/raw_data/factory_param/factory_param_data.csv b/firmware/esp-at/components/customized_partitions/raw_data/factory_param/factory_param_data.csv
+index 09d91367..574fd8e0 100644
+--- a/firmware/esp-at/components/customized_partitions/raw_data/factory_param/factory_param_data.csv
++++ b/firmware/esp-at/components/customized_partitions/raw_data/factory_param/factory_param_data.csv
+@@ -6,6 +6,7 @@ PLATFORM_ESP32,SOLO-1,,4,78,1,1,13,CN,115200,17,16,15,14
+ PLATFORM_ESP32,MINI-1,ESP32-U4WDH chip inside,4,78,1,1,13,CN,115200,22,19,15,14
+ PLATFORM_ESP32,ESP32-SDIO,,4,78,-1,1,13,CN,-1,-1,-1,-1,-1
+ PLATFORM_ESP32,ESP32-D2WD,"2MB flash, No OTA",4,78,1,1,13,CN,115200,22,19,15,14
++PLATFORM_ESP32,IOT-ESP-ETH,"16MB flash, Ethernet",4,78,0,1,13,TR,115200,1,3,-1,-1
+ PLATFORM_ESP32C3,MINI-1,TX:7 RX:6,4,78,1,1,13,CN,115200,7,6,5,4
+ PLATFORM_ESP32C3,ESP32C3-SPI,,4,78,-1,1,13,CN,-1,-1,-1,-1,-1
+ PLATFORM_ESP32C3,ESP32C3_RAINMAKER,TX:7 RX:6,4,78,1,1,13,CN,115200,7,6,5,4
+diff --git a/firmware/esp-at/main/Kconfig b/firmware/esp-at/main/Kconfig
+index fc464203..54553014 100644
+--- a/firmware/esp-at/main/Kconfig
++++ b/firmware/esp-at/main/Kconfig
+@@ -235,6 +235,39 @@ config PHY_LAN8720
+ 
+ endchoice
+ 
++config AT_ETH_MDC_GPIO
++    int "SMI MDC GPIO number"
++    range 0 33
++    default 23
++    depends on AT_ETHERNET_SUPPORT
++    help
++        Set the GPIO number used by SMI MDC.
++
++config AT_ETH_MDIO_GPIO
++    int "SMI MDIO GPIO number"
++    range 0 33
++    default 18
++    depends on AT_ETHERNET_SUPPORT
++    help
++        Set the GPIO number used by SMI MDIO.
++
++config AT_ETH_PHY_RST_GPIO
++    int "PHY Reset GPIO number"
++    range -1 33
++    default 4
++    depends on AT_ETHERNET_SUPPORT
++    help
++        Set the GPIO number used to reset PHY chip.
++        Set to -1 to disable PHY chip hardware reset.
++
++config AT_ETH_PHY_ADDR
++    int "PHY Address"
++    range 0 31
++    default 0
++    depends on AT_ETHERNET_SUPPORT
++    help
++        Set PHY address according your board schematic.
++
+ config AT_FS_COMMAND_SUPPORT
+     bool "AT FS command support."
+     default "n"
+diff --git a/firmware/esp-at/main/app_main.c b/firmware/esp-at/main/app_main.c
+index ca4ffefa..b9939ece 100644
+--- a/firmware/esp-at/main/app_main.c
++++ b/firmware/esp-at/main/app_main.c
+@@ -72,7 +72,9 @@ static void at_netif_init(void)
+ 
+ #ifdef CONFIG_AT_WIFI_COMMAND_SUPPORT
+     esp_netif_create_default_wifi_sta();
+-    esp_netif_create_default_wifi_ap();
++    #ifdef CONFIG_ESP_WIFI_SOFTAP_SUPPORT
++        esp_netif_create_default_wifi_ap();
++    #endif
+ #endif
+ }
+ 
+diff --git a/firmware/esp-at/module_config/module_esp32_default/patch/esp_eth_phy_rtl8201.patch b/firmware/esp-at/module_config/module_esp32_default/patch/esp_eth_phy_rtl8201.patch
+new file mode 100644
+index 00000000..fac66a3f
+--- /dev/null
++++ b/firmware/esp-at/module_config/module_esp32_default/patch/esp_eth_phy_rtl8201.patch
+@@ -0,0 +1,85 @@
++diff --git a/components/esp_eth/src/esp_eth_phy_rtl8201.c b/components/esp_eth/src/esp_eth_phy_rtl8201.c
++index 2cc42753ba..7538b3cd68 100644
++--- a/components/esp_eth/src/esp_eth_phy_rtl8201.c
+++++ b/components/esp_eth/src/esp_eth_phy_rtl8201.c
++@@ -41,6 +41,39 @@ typedef union {
++ } psr_reg_t;
++ #define ETH_PHY_PSR_REG_ADDR (0x1F)
++
+++/**
+++ * @brief Page 7 CLSR (Customized LEDs Setting Register)
+++ */
+++typedef union {
+++    struct {
+++        uint16_t led_sel0 : 4 ; /* Customized LED0 Setting, default is 0 */
+++        uint16_t led_sel1 : 4 ; /* Customized LED1 Setting, default is 0 */
+++        uint16_t reserved : 8 ; /* Reserved */
+++    };
+++    uint16_t val;
+++} p7_clsr_reg_t;
+++#define ETH_PHY_P7_CLSR_REG_ADDR (0x11)
+++
+++/**
+++ * @brief Page 7 IWLF (Interrupt, WOL Enable, and LEDs Function Registers)
+++ */
+++typedef union {
+++    struct {
+++        uint16_t en10mlpi : 1 ;        /* Enable 10M LPI LED Function, default is 0 */
+++        uint16_t reserved_1 : 2 ;      /* Reserved */
+++        uint16_t customized_led : 1 ;  /* Customized LED Enable, default is 0 */
+++        uint16_t led_sel : 2 ;         /* Traditional LED Function Selection, default is 3 */
+++        uint16_t reserved_2 : 4 ;      /* Reserved */
+++        uint16_t rg_led0_wol_sel : 1 ; /* LED and Wake-On-LAN Function Selection, default is 0 */
+++        uint16_t int_anerr : 1 ;       /* NWay Error Interrupt Mask, default is 0 */
+++        uint16_t int_dupchg : 1 ;      /* Duplex Change Interrupt Mask, default is 0 */
+++        uint16_t int_linkchg : 1 ;     /* Link Change Interrupt Mask, default is 0 */
+++        uint16_t reserved_3 : 2 ;      /* Reserved */
+++    };
+++    uint16_t val;
+++} p7_iwlf_reg_t;
+++#define ETH_PHY_P7_IWLF_REG_ADDR (0x13)
+++
++ typedef struct {
++     phy_802_3_t phy_802_3;
++ } phy_rtl8201_t;
++@@ -117,6 +150,32 @@ err:
++     return ret;
++ }
++
+++static esp_err_t rtl8201_set_led_function( phy_802_3_t *p_phy_802_3, uint8_t bits )
+++{
+++    esp_err_t ret = ESP_OK ;
+++    p7_iwlf_reg_t iwlf =
+++    {
+++        .en10mlpi = 0,
+++        .reserved_1 = 0,
+++        .customized_led = 0,
+++        .led_sel = 0,
+++        .reserved_2 = 0,
+++        .rg_led0_wol_sel = 0,
+++        .int_anerr = 0,
+++        .int_dupchg = 0,
+++        .int_linkchg = 0,
+++        .reserved_3 = 0
+++    } ;
+++    phy_rtl8201_t *rtl8201 = __containerof( p_phy_802_3, phy_rtl8201_t, phy_802_3 ) ;
+++    esp_eth_mediator_t *eth = rtl8201->phy_802_3.eth ;
+++    ESP_GOTO_ON_ERROR( rtl8201_page_select( rtl8201, 7 ), err, TAG, "select page 7 failed" ) ;
+++    ESP_GOTO_ON_ERROR( eth->phy_reg_write( eth, rtl8201->phy_802_3.addr, ETH_PHY_P7_IWLF_REG_ADDR, iwlf.val ), err, TAG, "write IWLF failed" ) ;
+++    ESP_GOTO_ON_ERROR( rtl8201_page_select( rtl8201, 0 ), err, TAG, "select page 0 failed" ) ;
+++    return ESP_OK ;
+++err:
+++    return ret ;
+++}
+++
++ static esp_err_t rtl8201_init(esp_eth_phy_t *phy)
++ {
++     esp_err_t ret = ESP_OK;
++@@ -131,6 +190,7 @@ static esp_err_t rtl8201_init(esp_eth_phy_t *phy)
++     ESP_GOTO_ON_ERROR(esp_eth_phy_802_3_read_oui(phy_802_3, &oui), err, TAG, "read OUI failed");
++     ESP_GOTO_ON_ERROR(esp_eth_phy_802_3_read_manufac_info(phy_802_3, &model, NULL), err, TAG, "read manufacturer's info failed");
++     ESP_GOTO_ON_FALSE(oui == 0x732 && model == 0x1, ESP_FAIL, err, TAG, "wrong chip ID");
+++    ESP_GOTO_ON_ERROR( rtl8201_set_led_function( phy_802_3, 0 ), err, TAG, "write led function failed" ) ;
++
++     return ESP_OK;
++ err:
+diff --git a/firmware/esp-at/module_config/module_esp32_default/patch/patch_list.ini b/firmware/esp-at/module_config/module_esp32_default/patch/patch_list.ini
+index 6595b343..9fec0936 100644
+--- a/firmware/esp-at/module_config/module_esp32_default/patch/patch_list.ini
++++ b/firmware/esp-at/module_config/module_esp32_default/patch/patch_list.ini
+@@ -11,3 +11,7 @@
+ [esp_wifi_deinit.patch]
+     path = esp-idf
+     note = "Fixed an issue where initializing and deinitializing the wifi could lead to wifi scanning failures (AR2023-009)"
++
++[esp_eth_phy_rtl8201.patch]
++    path = esp-idf
++    note = "Added initialization of LED functions."
+diff --git a/firmware/esp-at/module_config/module_esp32_default/sdkconfig.defaults b/firmware/esp-at/module_config/module_esp32_default/sdkconfig.defaults
+index f5d2c8e0..77d1441d 100644
+--- a/firmware/esp-at/module_config/module_esp32_default/sdkconfig.defaults
++++ b/firmware/esp-at/module_config/module_esp32_default/sdkconfig.defaults
+@@ -6,7 +6,7 @@ CONFIG_IDF_TARGET_ESP32=y
+ # Serial flasher config
+ CONFIG_ESPTOOLPY_FLASHMODE_DIO=y
+ CONFIG_ESPTOOLPY_FLASHFREQ_40M=y
+-CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
++# CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+ 
+ # Bootloader config
+ CONFIG_BOOTLOADER_WDT_ENABLE=y
+@@ -160,3 +160,24 @@ CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP=y
+ CONFIG_BTDM_LPCLK_SEL_EXT_32K_XTAL=y
+ CONFIG_BTDM_CTRL_LPCLK_SEL_EXT_32K_XTAL=y
+ CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT=y
++
++# Added for iot-esp-eth
++CONFIG_BOOTLOADER_LOG_LEVEL_NONE=y
++# CONFIG_BOOTLOADER_LOG_LEVEL_INFO is not set
++CONFIG_BOOTLOADER_LOG_LEVEL=0
++# CONFIG_ESPTOOLPY_FLASHSIZE_4MB is not set
++CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
++CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
++# CONFIG_APPTRACE_DEST_UART0 is not set
++# CONFIG_ESP_CONSOLE_UART_DEFAULT is not set
++CONFIG_ESP_CONSOLE_NONE=y
++CONFIG_ESP_CONSOLE_UART_NUM=-1
++CONFIG_AT_ETHERNET_SUPPORT=y
++# CONFIG_PHY_IP101 is not set
++CONFIG_PHY_RTL8201=y
++# CONFIG_PHY_DP83848 is not set
++# CONFIG_PHY_LAN8720 is not set
++CONFIG_AT_ETH_MDC_GPIO=23
++CONFIG_AT_ETH_MDIO_GPIO=18
++CONFIG_AT_ETH_PHY_RST_GPIO=4
++CONFIG_AT_ETH_PHY_ADDR=0
+diff --git a/firmware/esp-at/module_config/module_esp32_default/sdkconfig_silence.defaults b/firmware/esp-at/module_config/module_esp32_default/sdkconfig_silence.defaults
+index 1be1fb27..06a3e28a 100644
+--- a/firmware/esp-at/module_config/module_esp32_default/sdkconfig_silence.defaults
++++ b/firmware/esp-at/module_config/module_esp32_default/sdkconfig_silence.defaults
+@@ -6,7 +6,7 @@ CONFIG_IDF_TARGET_ESP32=y
+ # Serial flasher config
+ CONFIG_ESPTOOLPY_FLASHMODE_DIO=y
+ CONFIG_ESPTOOLPY_FLASHFREQ_40M=y
+-CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
++# CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+ 
+ # Bootloader config
+ CONFIG_BOOTLOADER_WDT_ENABLE=y
+@@ -164,3 +164,24 @@ CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP=y
+ CONFIG_BTDM_LPCLK_SEL_EXT_32K_XTAL=y
+ CONFIG_BTDM_CTRL_LPCLK_SEL_EXT_32K_XTAL=y
+ CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT=y
++
++# Added for iot-esp-eth
++CONFIG_BOOTLOADER_LOG_LEVEL_NONE=y
++# CONFIG_BOOTLOADER_LOG_LEVEL_INFO is not set
++CONFIG_BOOTLOADER_LOG_LEVEL=0
++# CONFIG_ESPTOOLPY_FLASHSIZE_4MB is not set
++CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
++CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
++# CONFIG_APPTRACE_DEST_UART0 is not set
++# CONFIG_ESP_CONSOLE_UART_DEFAULT is not set
++CONFIG_ESP_CONSOLE_NONE=y
++CONFIG_ESP_CONSOLE_UART_NUM=-1
++CONFIG_AT_ETHERNET_SUPPORT=y
++# CONFIG_PHY_IP101 is not set
++CONFIG_PHY_RTL8201=y
++# CONFIG_PHY_DP83848 is not set
++# CONFIG_PHY_LAN8720 is not set
++CONFIG_AT_ETH_MDC_GPIO=23
++CONFIG_AT_ETH_MDIO_GPIO=18
++CONFIG_AT_ETH_PHY_RST_GPIO=4
++CONFIG_AT_ETH_PHY_ADDR=0

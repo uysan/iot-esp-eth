@@ -1,0 +1,787 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid b4245a29-2646-439a-9a84-5c326e51dc42)
+
+  (paper "A4")
+
+  (title_block
+    (title "IOT ESP Ethernet")
+    (date "2023-12-30")
+    (rev "1")
+    (company "Uysan")
+  )
+
+  (lib_symbols
+  )
+
+
+  (text "NETWORK" (at 78.74 48.26 0)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify left bottom))
+    (uuid 038fb238-e94b-402e-bdc1-0b087e898fad)
+  )
+  (text "MISC" (at 129.54 48.26 0)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify left bottom))
+    (uuid 0edcba1c-89cd-4f09-bc83-94edb4ee81cd)
+  )
+  (text "2" (at 48.26 30.48 180)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify right bottom))
+    (uuid 79f87103-3d33-4f76-ab47-6608376a0667)
+  )
+  (text "3" (at 99.06 30.48 180)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify right bottom))
+    (uuid 813d7944-fba8-4586-b858-3c9997ec8706)
+  )
+  (text "4" (at 149.86 30.48 180)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify right bottom))
+    (uuid a9f98fc2-737a-46bd-bc87-a2cd92bbe10f)
+  )
+  (text "CPU" (at 27.94 48.26 0)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify left bottom))
+    (uuid ce1bc581-e769-40d5-b725-ae7039b3aea1)
+  )
+
+  (sheet (at 25.4 25.4) (size 25.4 25.4) (fields_autoplaced)
+    (stroke (width 0) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 00000000-0000-0000-0000-000058b5eff9)
+    (property "Sheet name" "cpu" (id 0) (at 25.4 24.6884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "iot-esp-eth-com-cpu.kicad_sch" (id 1) (at 25.4 51.3846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet (at 76.2 25.4) (size 25.4 25.4) (fields_autoplaced)
+    (stroke (width 0) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 00000000-0000-0000-0000-0000620e5648)
+    (property "Sheet name" "network" (id 0) (at 76.2 24.6884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "iot-esp-eth-com-network.kicad_sch" (id 1) (at 76.2 51.3846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet (at 127 25.4) (size 25.4 25.4) (fields_autoplaced)
+    (stroke (width 0) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid a4e2ae4f-0b24-4851-9b64-73468a94057a)
+    (property "Sheet name" "misc" (id 0) (at 127 24.6884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "iot-esp-eth-com-misc.kicad_sch" (id 1) (at 127 51.3846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/00000000-0000-0000-0000-000058b5eff9" (page "2"))
+    (path "/00000000-0000-0000-0000-0000620e5648" (page "3"))
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a" (page "4"))
+  )
+
+  (symbol_instances
+    (path "/00000000-0000-0000-0000-000058b5eff9/b47e9bfa-2358-4ae5-856b-2b11b5de8ff8"
+      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/bf0b3ff8-83b2-48e0-a4f7-12fbdf4d021d"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/955732a3-9fff-4116-9874-6ade59af3f37"
+      (reference "#PWR0103") (unit 1) (value "VIO") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/39329c57-99ed-4a17-8865-eb49d5abfdaf"
+      (reference "#PWR0104") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/c8192867-29c3-4fa8-b546-a5f737ac021c"
+      (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/ea0cf38a-644d-4c5a-89d3-3df7c7805440"
+      (reference "#PWR0106") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/f2b8ec00-ef98-4dec-88f5-bd4e199bf790"
+      (reference "#PWR0107") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/eab20854-baa4-4a2c-ab4d-abec1c059a00"
+      (reference "#PWR0108") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/e03344c1-5b23-4597-b16c-c0981d611242"
+      (reference "#PWR0109") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/b83b13fc-454d-4e42-b1c1-62fde871371e"
+      (reference "#PWR0110") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/d4f77902-9ee3-435c-9c8c-0b33ad0ad75e"
+      (reference "#PWR0111") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/e946092e-179e-4613-aed7-72e6b87e230b"
+      (reference "#PWR0112") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/c574b098-1b11-4e6a-b1e8-de7d30f43c2a"
+      (reference "#PWR0113") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/55f2823d-e8a3-4695-a634-ff6e5341a9b2"
+      (reference "#PWR0114") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/5893666d-af5a-41ed-849f-6d474a4fed1e"
+      (reference "#PWR0115") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/97b32789-56c7-45a0-9e7f-9a71d03cc4a3"
+      (reference "#PWR0116") (unit 1) (value "VIO") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/c540f728-2db7-4986-98df-3a748c44bee3"
+      (reference "#PWR0117") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/abdda31a-8a8c-43c1-b44a-2466139f3bad"
+      (reference "#PWR0118") (unit 1) (value "+3.3VW") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/b0ef4db1-0e96-4938-81d9-bbdd87f749b1"
+      (reference "#PWR0119") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/626ac089-3580-4f11-a1cc-0baf76011e1b"
+      (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/d2009be6-c741-4bda-b0d1-73189853bc6d"
+      (reference "#PWR0121") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/a7fb082d-1ac3-4cdf-9647-6d3e9c57c169"
+      (reference "#PWR0122") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/5891e04f-8897-4a9c-a490-a4c20f5b14a3"
+      (reference "#PWR0123") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/ef538cd0-42b5-4dd5-b9ae-b1895f41e836"
+      (reference "#PWR0124") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/e2ceb8d4-b720-49fb-a7a7-e71c4a1c32bf"
+      (reference "#PWR0125") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/51952955-96bd-4647-bb50-75300170d418"
+      (reference "#PWR0126") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/a826d89c-ce92-43c3-8f69-b2b74c429bad"
+      (reference "#PWR0127") (unit 1) (value "+3.3VW") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/c2aef722-3fc3-4cb6-abf7-6ac0d62cc7a9"
+      (reference "#PWR0128") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/72c3b4a3-2937-4fbf-b110-552130ea76a5"
+      (reference "#PWR0129") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/7de26096-8090-4610-9a80-bfdbb813fd35"
+      (reference "#PWR0130") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/d2d09422-31a5-460f-b023-a28fa828c64d"
+      (reference "#PWR0131") (unit 1) (value "VIO") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/9d83ea71-152e-4bbb-925c-38e65ae416f1"
+      (reference "#PWR0132") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ddde92fe-305a-473b-9707-2f0f9d0e74ee"
+      (reference "#PWR0133") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/5a3f4fdd-b560-4e59-8697-577ce8626de1"
+      (reference "#PWR0134") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/355607b2-7dd1-4aba-9e76-2ea938f5db30"
+      (reference "#PWR0135") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8a96b587-57f3-459d-8855-a267b567dedf"
+      (reference "#PWR0136") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/410cee51-14d6-4127-ae6b-9cc3d9877e84"
+      (reference "#PWR0137") (unit 1) (value "+5VUSB") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b213438a-4afd-4622-8082-1af65da52bbb"
+      (reference "#PWR0138") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/f87e1763-e827-4d29-b94a-1360b54a276e"
+      (reference "#PWR0139") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/220a4f00-0667-4d96-a83f-88af174794e9"
+      (reference "#PWR0140") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/4ad96e57-eb3d-4b67-99f9-9c8d49bc9f91"
+      (reference "#PWR0141") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e4834475-7440-4acb-8234-ac2d731c7f5c"
+      (reference "#PWR0142") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/a2e60b16-da92-44d4-bd15-fc793d387efa"
+      (reference "#PWR0143") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/3adb31bb-3356-4ed8-9e6a-ef96ba951562"
+      (reference "#PWR0144") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ee388831-2ec6-4b5c-b4d2-e15f1f85855b"
+      (reference "#PWR0145") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/6c86eaaa-6db1-4d3a-85cf-4082b88d739f"
+      (reference "#PWR0146") (unit 1) (value "+3.3VUSB") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/1e947548-1c00-493c-8ca7-169980a57d0f"
+      (reference "#PWR0147") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ba12e012-9bb8-4bdc-8196-13b17a8b852e"
+      (reference "#PWR0148") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/538639fe-fcce-4dde-8dc0-89a1d4c4c416"
+      (reference "#PWR0149") (unit 1) (value "+5VUSB") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/23b57dbf-0dff-447c-9ccb-97bf1b7e07d4"
+      (reference "#PWR0150") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/833f2578-e2b4-42f6-9c06-429bb49b05f8"
+      (reference "#PWR0151") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/5c56190a-adfb-4f63-9f78-1906b7c77f51"
+      (reference "#PWR0152") (unit 1) (value "+3.3VUSB") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ffcc89f3-0890-498c-aeea-2459e072232a"
+      (reference "#PWR0153") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/78aad138-2823-4dd4-9bf1-45af96112f8f"
+      (reference "#PWR0154") (unit 1) (value "+3.3VUSB") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/7b0cacc8-3397-4579-92d6-05d92e11e17e"
+      (reference "#PWR0155") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/bfb8f984-58f0-4b1f-9625-cbfd46c90047"
+      (reference "#PWR0156") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/42e96d72-e5c9-405a-a7dd-7857f7646df2"
+      (reference "#PWR0157") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/6da41f79-c16e-4fc6-a6d3-1dd20ea1339f"
+      (reference "#PWR0158") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/f391d523-e24e-4d1c-afd1-cdbf0e72ec3a"
+      (reference "#PWR0159") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/08e3ea07-f2c9-41b5-ae00-ef8dc978eaf3"
+      (reference "#PWR0160") (unit 1) (value "+3.3VMCU") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/d302c117-7aa1-44fe-b061-8792c72fc6da"
+      (reference "#PWR0161") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/869b4cd8-6701-4ade-8503-f930aed470e9"
+      (reference "#PWR0162") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/94a212d0-2355-42ce-942d-86a74fad6546"
+      (reference "#PWR0163") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b9397305-4a00-45ec-92a6-92c2b4cbd951"
+      (reference "#PWR0164") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/255095f1-638a-4509-9f36-473fc0f2144c"
+      (reference "#PWR0179") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/b640ca3f-f4b2-4466-9c39-9fc2ca907a4c"
+      (reference "#PWR0197") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/22d88ef9-24cc-45aa-bae3-52a9c2116af4"
+      (reference "#PWR0198") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/7a19583d-d8a0-450d-a88d-1c8f754cdae5"
+      (reference "#PWR0204") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/f9e2a6ef-dfe0-4eef-8d8a-a7a4435079f5"
+      (reference "#PWR0206") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/91145328-4f92-4f84-8980-efb9adffdf7b"
+      (reference "#PWR0207") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e65a3f55-d5e9-4429-8219-a81a2b297714"
+      (reference "#PWR0209") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/ec46c327-a336-417b-b495-eb1aad927070"
+      (reference "#PWR0210") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/db0f6292-f67a-429a-9fc1-1d639b5f2406"
+      (reference "#PWR0211") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/3308a745-5fa9-4775-8918-499a68fc220f"
+      (reference "#PWR0212") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/1aa59c12-73fe-4990-8cba-75e1f7b6643c"
+      (reference "#PWR0215") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/47aabb43-b4c1-4cee-9f0d-c8b67cdfa998"
+      (reference "#PWR0218") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/a41a4197-af75-4ad1-880e-9011b57586e8"
+      (reference "#PWR0219") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/c0998a05-54f3-4a93-8df6-92d60b394e2e"
+      (reference "#PWR0220") (unit 1) (value "+3.3VETH") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e75456f5-d608-4148-9adc-44a2f236c353"
+      (reference "#PWR0222") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/46e595b8-ac8f-4a2d-94e4-297a194b73f4"
+      (reference "#PWR0223") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/bab540e9-229c-4928-b0c7-2f96c90c0066"
+      (reference "ANT1") (unit 1) (value "Antenna") (footprint "Celebi:N.A.")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/4ee44660-c471-4535-ad31-12b0b7955549"
+      (reference "C1") (unit 1) (value "0.9pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/ee8ab9a5-2692-4319-a7a0-5da9aec4e02d"
+      (reference "C2") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/6229af37-5663-42af-b1d0-bb6a5aac634f"
+      (reference "C3") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/25692731-3f76-46da-abeb-c211af9564d1"
+      (reference "C4") (unit 1) (value "3.3nF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/2271a515-e5b7-44a8-a22d-c2b9caea0a8f"
+      (reference "C5") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/366ec616-a87e-4e26-8230-76a63e069503"
+      (reference "C6") (unit 1) (value "10nF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/cf8b031c-b66e-473e-8503-ef971a76e65c"
+      (reference "C7") (unit 1) (value "3.3nF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/9035a7b9-57e4-42bd-815b-d9c0fbc071a2"
+      (reference "C8") (unit 1) (value "1uF{slash}16V") (footprint "Celebi:SM0603C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/d70ce2d3-1fea-44bb-b502-1a0db4237dd2"
+      (reference "C9") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/35261d87-7572-4246-87cd-c167d8d2a213"
+      (reference "C10") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/034e5418-2426-4050-b431-70401bfa6281"
+      (reference "C11") (unit 1) (value "1uF{slash}16V") (footprint "Celebi:SM0603C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/bd7a3dc8-eb03-499f-8904-c09e4411fad3"
+      (reference "C12") (unit 1) (value "12pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/5a981d24-815c-4e4b-a018-cddf071d1935"
+      (reference "C13") (unit 1) (value "12pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/2e3c2a07-8ae8-4e96-9c19-f0c73a5add68"
+      (reference "C14") (unit 1) (value "18pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/290e88ea-7d58-4ef1-ad09-305cb189ea0e"
+      (reference "C15") (unit 1) (value "18pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/018b5da3-6564-41fa-a7a3-a503a43b9fff"
+      (reference "C16") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/f8802f8f-d707-4b5d-82fc-b42c3c251ded"
+      (reference "C17") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/944817a9-0664-4f96-a2dc-07dc25df470e"
+      (reference "C18") (unit 1) (value "1uF{slash}16V") (footprint "Celebi:SM0603C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/17960198-72e1-4172-97c0-a5f42e4169d2"
+      (reference "C19") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/6bae6747-6553-477a-9c71-27bb07d3901e"
+      (reference "C20") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/0fea5fa0-c872-4e3e-bb4c-a7a9519d13c8"
+      (reference "C21") (unit 1) (value "10uF{slash}16V") (footprint "Celebi:SM0805C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/4725ff86-1071-40cd-9c5b-3aba86b1f723"
+      (reference "C22") (unit 1) (value "1uF{slash}16V") (footprint "Celebi:SM0603C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/efd1e091-f968-47e0-8459-d706c1e3d2d6"
+      (reference "C23") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/3ec31c78-399e-46bf-a9ca-e5796cf588ef"
+      (reference "C24") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/c1f7435f-bb73-4d77-9e9c-512577c95400"
+      (reference "C25") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/e8a89098-fd85-4130-9c0c-f9f68af1bf1f"
+      (reference "C31") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/24c08867-477f-4b74-a990-6357f4644ab2"
+      (reference "C32") (unit 1) (value "100nF{slash}50V") (footprint "Celebi:SM0603C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/daf1d400-36d8-411b-9921-c9d8b80dfd3c"
+      (reference "C41") (unit 1) (value "10uF/16V") (footprint "Celebi:SM0805C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/3beb70da-d3e0-42e0-af8d-b3a3b3ae7429"
+      (reference "C42") (unit 1) (value "47uF{slash}16V") (footprint "Celebi:SMD-C-6032")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/e1534b61-0759-4713-938a-b40b9c2ad99b"
+      (reference "C43") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/b7a0a08f-369a-47ad-b5a8-c88ad8aa98f4"
+      (reference "C62") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/5878f5ad-242d-4da0-b862-dd7db3b70062"
+      (reference "C63") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/bd78987f-4e96-4d3d-9e43-12a483c00dad"
+      (reference "C64") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/846f4b45-5957-4b35-a9df-df76ef419231"
+      (reference "C65") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/d46c31e1-efa0-47c4-847d-bac29bd044bd"
+      (reference "C66") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/a2176ab6-f905-4284-83cd-9c374e9881d7"
+      (reference "C67") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/25129f1a-e7e1-4634-aa51-a473fc9bad68"
+      (reference "C68") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/b407e6be-0114-429c-a484-c27029fe5f70"
+      (reference "C69") (unit 1) (value "18pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/592e4105-e60a-4d7d-ae34-6a9dde4768c4"
+      (reference "C70") (unit 1) (value "18pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/a701ed8e-7919-4c9f-b37c-7f2c0f7849ea"
+      (reference "C71") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/3aa47a61-aa8b-46fa-a98a-6ab4313d7653"
+      (reference "C72") (unit 1) (value "10uF/16V") (footprint "Celebi:SM0805C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/beb840d2-1bb8-47f2-a509-78c48d166ecc"
+      (reference "C73") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/29557f9f-954c-4499-9534-725af7eef80f"
+      (reference "C74") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/ad9312c7-e230-49b0-8a1f-bf1cf5b789f6"
+      (reference "C75") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/f871539b-2083-4d27-878f-cc10ef8753f2"
+      (reference "C81") (unit 1) (value "100nF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/f850958c-bb73-4a0d-852f-a82b94d02318"
+      (reference "C82") (unit 1) (value "15pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b8180692-8561-4bca-8734-c54ef478c62f"
+      (reference "C83") (unit 1) (value "1uF{slash}16V") (footprint "Celebi:SM0603C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/cc723d5c-5f22-43fb-a03e-f58fee90cb62"
+      (reference "C84") (unit 1) (value "27pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/82023dd4-3489-4c68-993c-861a0a2aaf71"
+      (reference "C85") (unit 1) (value "27pF{slash}50V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/926360af-cd03-443c-811d-29aa3976fed5"
+      (reference "C86") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b0a32c7d-6226-4cf2-9504-2a1008a8a50b"
+      (reference "C87") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/db83bdee-368a-43db-b56f-cdb24ba85780"
+      (reference "C88") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ab40ab52-b73b-4157-bc20-34bd912f391c"
+      (reference "C89") (unit 1) (value "10uF/16V") (footprint "Celebi:SM0805C")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b41aab1e-d164-4bc6-8896-a86f2d4ade90"
+      (reference "C90") (unit 1) (value "100nF{slash}16V") (footprint "Celebi:SM0402C")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/d5348df2-cede-44a0-958c-d9726acbe196"
+      (reference "D1") (unit 1) (value "TVS_4V") (footprint "Celebi:SM0402V")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/2e27e7a1-85a5-4768-98ce-b21bb902f631"
+      (reference "D31") (unit 1) (value "BAT54WS") (footprint "Celebi:SOD323")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/0a16eef4-0e78-4735-a2da-f0d6591977bd"
+      (reference "D41") (unit 1) (value "BAT54WS") (footprint "Celebi:SOD323")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/b30b00c0-83d6-45cc-b475-47aff07edfe5"
+      (reference "D42") (unit 1) (value "Diode-LED_Green") (footprint "Celebi:led-SM0603_Green")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/50ee5f9c-42f1-4dfe-80c1-39d1c5787ab4"
+      (reference "D61") (unit 1) (value "TVS_5V") (footprint "Celebi:SOT23-6L")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/28d6e529-8108-4c3c-992e-99f144cad419"
+      (reference "D81") (unit 1) (value "TVS_5V") (footprint "Celebi:SOT23-6L")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/88c0f6c1-8294-43ef-b325-a95bc1f6c447"
+      (reference "D82") (unit 1) (value "BAT54WS") (footprint "Celebi:SOD323")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/564f67c9-3f0d-46f5-9d9a-4234880203cb"
+      (reference "D83") (unit 1) (value "BAT54WS") (footprint "Celebi:SOD323")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/3ab40245-d97b-468e-b8f4-31f300149488"
+      (reference "D91") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/7a0ecb42-80d0-4e93-921e-8465a4e6cf84"
+      (reference "D92") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/364856af-aae3-4b03-8400-9514cabbccc8"
+      (reference "D93") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/eafd647f-ede4-49fb-8591-17d2d1df760c"
+      (reference "D94") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/91416910-5eb9-4403-ab94-71cbfa6ea867"
+      (reference "D95") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/8cbf7ff1-28c0-4321-94e2-1b05a068a25e"
+      (reference "D96") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/1aca9670-5dcc-49d4-b180-479a64595d5d"
+      (reference "D97") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/0e0072c7-9dbd-4b38-bf9c-e07ba43aa98f"
+      (reference "D98") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/783ed8f8-a03d-4042-aacc-183bd01e288d"
+      (reference "D99") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/37ca4113-887d-4e1c-bf58-a59e0f2dfb89"
+      (reference "D100") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/f5b3b565-a383-4eda-b540-f595dfc09c02"
+      (reference "D101") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e4275c29-ecdc-40cd-8f32-9eefc4b6835b"
+      (reference "D102") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/27b76c64-ed56-4547-857a-64a2c4936739"
+      (reference "D103") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/b3d5f006-9eb8-48b9-9dde-cf7d71a4e819"
+      (reference "D104") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/2d55960c-fd03-49c0-bc4f-9ce9370c9d78"
+      (reference "D105") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e02e6092-b25e-4d84-be97-bc86941a90a2"
+      (reference "D106") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/465c674a-48d4-472f-aee2-ee0292e28ce5"
+      (reference "D107") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/6d4b42f2-3c3b-4b88-94b5-335477b45d0e"
+      (reference "D108") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/8b4ee164-22ae-4348-b104-64ae7b24e0c2"
+      (reference "D109") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/3495de2c-f579-40e5-9fff-db1e757f7993"
+      (reference "D110") (unit 1) (value "TVS_5V") (footprint "Celebi:DFN1006-2")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/d48112f9-19f5-44eb-83db-85915a97cb8c"
+      (reference "E41") (unit 1) (value "Jumper") (footprint "Celebi:N.A.")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/0f1b4edc-ae0a-41ca-8ad4-5df517dd2f35"
+      (reference "FD1") (unit 1) (value "Fiducial") (footprint "Celebi:fiducial_sc_D1_M3mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/3b83e855-1187-4a5f-b445-6be7b77c1656"
+      (reference "FD2") (unit 1) (value "Fiducial") (footprint "Celebi:fiducial_sc_D1_M3mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/4d94c96c-4eba-45a0-abfa-59f845e28b89"
+      (reference "FD3") (unit 1) (value "Fiducial") (footprint "Celebi:fiducial_sc_D1_M3mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ee25a91f-7631-4032-9c4c-140dce1d0847"
+      (reference "FD4") (unit 1) (value "Fiducial") (footprint "Celebi:fiducial_sc_D1_M3mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/09ebed5f-b3b5-455b-a109-29dcea346b95"
+      (reference "J41") (unit 1) (value "Conn_01x03") (footprint "Celebi:sil-1.27mm-3P")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/2222dcdd-9cb9-4ffd-9522-b95b0c463591"
+      (reference "J51") (unit 1) (value "Conn_01x12{slash}DNP") (footprint "Celebi:sil-12P")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/d0491564-5089-4a98-b78f-e4b21029793b"
+      (reference "J52") (unit 1) (value "Conn_01x12{slash}DNP") (footprint "Celebi:sil-12P")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/c863fa68-898d-40f8-9585-065aef1bd50a"
+      (reference "J61") (unit 1) (value "HR913550A") (footprint "Celebi:eth-HR911105A")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8694ebfb-1374-4f25-8d80-bf60f704ead3"
+      (reference "J81") (unit 1) (value "USB-Micro") (footprint "Celebi:usb-U253-05XX-4BH89-XXS")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/6e886881-ea28-4ceb-8a5d-70d5181b251f"
+      (reference "L1") (unit 1) (value "2.2nH") (footprint "Celebi:SM0402L")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/39f4e8ab-aa00-4105-a737-63b720526ded"
+      (reference "L2") (unit 1) (value "Bead_300R") (footprint "Celebi:SM0603L")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/07bf413f-2d96-4220-a2f2-8e9942aaa459"
+      (reference "L3") (unit 1) (value "2nH") (footprint "Celebi:SM0402L")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/16e597b2-562d-40a6-90c6-b03c42762dc7"
+      (reference "L4") (unit 1) (value "Bead_220R{slash}DNP") (footprint "Celebi:SM0402L")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/813dfd78-3af4-4e05-bc62-c9d349ac21be"
+      (reference "L61") (unit 1) (value "Bead_220R") (footprint "Celebi:SM0402L")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8dff86a5-3b3a-430c-ae3d-3686d38ad55e"
+      (reference "L81") (unit 1) (value "Bead_300R") (footprint "Celebi:SM0603L")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/63505577-255e-4d07-92fd-39e9babb6597"
+      (reference "L82") (unit 1) (value "Bead_220R") (footprint "Celebi:SM0402L")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/b8054794-4b94-4569-bb66-98be0711e897"
+      (reference "M1") (unit 1) (value "Shield_Cover") (footprint "Celebi:N.A.")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/f1aba172-a726-4a03-8f32-d91f42810c01"
+      (reference "Q81") (unit 1) (value "BC817") (footprint "Celebi:SOT23-3")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/7cddabd5-176b-4b0e-b001-9ea33dc6201c"
+      (reference "Q82") (unit 1) (value "BC817") (footprint "Celebi:SOT23-3")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/c0cc8eee-3522-4610-9d24-9f2faaaf0f28"
+      (reference "R1") (unit 1) (value "20k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/0f708031-ac63-44ee-a637-30fe01c2a5c6"
+      (reference "R2") (unit 1) (value "499R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/4d562f5b-a980-4f1a-ae02-2fd941ba5b6e"
+      (reference "R3") (unit 1) (value "100R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/b2f14e31-786d-42f7-b1ef-761a88ed3a45"
+      (reference "R4") (unit 1) (value "0R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/833810b6-0723-4e79-8ca8-8a8c15169fb3"
+      (reference "R5") (unit 1) (value "10Meg") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/e1ed05e3-9a4a-4912-af3f-235dc086650f"
+      (reference "R6") (unit 1) (value "1k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/4cae79c1-8d91-4e18-acf8-39f35aaa4f0e"
+      (reference "R7") (unit 1) (value "22R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/ced9c6ab-f1e3-411d-ab96-f32ff936feb4"
+      (reference "R8") (unit 1) (value "22R") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/27d3ff32-554e-4db0-a790-c0eff978c400"
+      (reference "R31") (unit 1) (value "100k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/7ff07143-7f72-4682-8695-22e9a92ea718"
+      (reference "R32") (unit 1) (value "100R") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/5080d7e8-8b99-4f62-aff4-bf00368013ea"
+      (reference "R41") (unit 1) (value "2k7") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/72db3715-2268-4a71-8526-0e1448af7a31"
+      (reference "R51") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/ef6610f8-526e-4d62-a075-4c80203ccc65"
+      (reference "R52") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/4391f4a1-fa1d-4ecc-b583-2a7a6d560c1d"
+      (reference "R53") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/6aa2d065-0c99-4301-b441-15668a16b702"
+      (reference "R54") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/df05926e-6731-4a87-87dc-a18baa7bb10a"
+      (reference "R55") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8a1902aa-aae1-4900-801c-6c6546647b1d"
+      (reference "R56") (unit 1) (value "470k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/9c6d0809-d7b6-47dc-88ea-6d3d23a83bff"
+      (reference "R62") (unit 1) (value "1k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/245f9c8e-e388-42ed-a332-10c5f8cf0539"
+      (reference "R63") (unit 1) (value "1k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/300fac03-513d-4313-9360-c2b2a356c4f1"
+      (reference "R64") (unit 1) (value "2k49") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/19c4d9a3-c764-45b1-8f97-89c653bd2d95"
+      (reference "R65") (unit 1) (value "47k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/45f13015-4ae1-472d-aeed-6a85d12b5d82"
+      (reference "R66") (unit 1) (value "10k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/e2cba58e-04fe-4dc4-8647-1f9bb386e56f"
+      (reference "R67") (unit 1) (value "10k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/aabc4917-c6e0-4eea-a286-1033f58ddd91"
+      (reference "R68") (unit 1) (value "22R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/02f57a60-8b18-4506-87c9-0c38239c0ba9"
+      (reference "R69") (unit 1) (value "22R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/9f438ed2-c315-4b4a-9362-0fd60e04b5a3"
+      (reference "R70") (unit 1) (value "22R") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/fae1ddb0-9190-4cc1-9e35-ac5a039eacb1"
+      (reference "R71") (unit 1) (value "4k7") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/0231d5ae-02a7-499c-a767-0c665ea4a599"
+      (reference "R72") (unit 1) (value "4k7") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/d3d0ec42-41c6-415e-a9c9-22da66fa76dc"
+      (reference "R73") (unit 1) (value "4k7") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/aec244ac-41af-4b22-9018-314d8f326a03"
+      (reference "R81") (unit 1) (value "10k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/c19381a4-8b25-46db-893a-29b8c61014be"
+      (reference "R82") (unit 1) (value "10k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/4a74aa3d-51a1-48e3-b303-66b9bb38f49a"
+      (reference "R83") (unit 1) (value "1k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/1c6f6325-6bd5-4b6d-ba43-dae7e997cac1"
+      (reference "R84") (unit 1) (value "1k") (footprint "Celebi:SM0402")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/1546f30b-0806-4d07-8f3f-d0a6211bbe10"
+      (reference "R85") (unit 1) (value "47k") (footprint "Celebi:SM0402")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/909c2222-5679-4000-8fa6-f03ab4afea55"
+      (reference "S1") (unit 1) (value "Tact_Switch") (footprint "Celebi:switch-WE-WS-TASV-3x2.6_H1.4mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/6d25358a-3939-4282-aa0a-2883c4062ec4"
+      (reference "S31") (unit 1) (value "Tact_Switch") (footprint "Celebi:switch-WE-WS-TASV-3x2.6_H1.4mm")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/10760ca6-ba38-47b8-bb3b-84a5173cb2e3"
+      (reference "SH1") (unit 1) (value "Shield") (footprint "Celebi:shield-36103166S")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/2890052b-a92d-4340-811a-1ff0340eb6d0"
+      (reference "T81") (unit 1) (value "CM_Choke_90R") (footprint "Celebi:tr-smd-WE-CNSW_0805")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/e54ed65c-3846-4b59-84c9-2b5706f04e8c"
+      (reference "U1") (unit 1) (value "ESP32-D0WD") (footprint "Celebi:QFN48_5x5_P0.35_E3.5mm")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/5e9be825-0c0c-4aeb-9aac-da1f88f783f9"
+      (reference "U2") (unit 1) (value "W25Q128JV") (footprint "Celebi:SO8_5.2x5.2_P1.27mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8350f779-f403-4018-91bb-a29658f8c0cb"
+      (reference "U31") (unit 1) (value "APX811_2.93V") (footprint "Celebi:SOT143-4")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/8c7b48aa-1945-4640-a8aa-6ea25ea78a4e"
+      (reference "U41") (unit 1) (value "AMS1117-3.3") (footprint "Celebi:SOT223")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/099ce75a-30a5-432a-a33a-ac384218fd5b"
+      (reference "U61") (unit 1) (value "RTL8201F") (footprint "Celebi:QFN32_5x5_P0.5_E3.35mm")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/f625cd76-91fc-4cb8-8c72-c9ad5184f79e"
+      (reference "U62") (unit 1) (value "74AUP1G126") (footprint "Celebi:SOT23-5L")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/aac1dcc7-048f-47a4-ae43-20fd28eb9b79"
+      (reference "U81") (unit 1) (value "CH340G") (footprint "Celebi:SO16_4x10.5_P1.27mm")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/36fe72c9-16d7-4b1f-ba3c-838c48d8c96b"
+      (reference "U82") (unit 1) (value "74AHC1G08") (footprint "Celebi:SOT23-5L")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/c8796859-dcbf-4909-b8dc-5ab2a7b30cda"
+      (reference "X1") (unit 1) (value "40MHz_10pF") (footprint "Celebi:xtal-2.5x2.0mm_4pin")
+    )
+    (path "/00000000-0000-0000-0000-000058b5eff9/82f20f89-fa41-4cbb-9464-98cc91bb5935"
+      (reference "X2") (unit 1) (value "32.768kHz_12.5pF") (footprint "Celebi:xtal-3.2x1.5mm")
+    )
+    (path "/00000000-0000-0000-0000-0000620e5648/a3b1af4e-ae5c-4eaa-9a32-5f520c8b8aee"
+      (reference "X61") (unit 1) (value "25MHz_12pF") (footprint "Celebi:xtal-3.2x2.5mm_4pin")
+    )
+    (path "/a4e2ae4f-0b24-4851-9b64-73468a94057a/7b51db75-05f0-4bdd-91da-925c14e27d39"
+      (reference "X81") (unit 1) (value "12MHz_18pF") (footprint "Celebi:xtal-3.2x2.5mm_4pin")
+    )
+  )
+)

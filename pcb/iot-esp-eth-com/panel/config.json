@@ -1,0 +1,37 @@
+{
+    "layout": {
+        "alternation": "cols",
+        "hspace": "2mm",
+        "rotation": "-90deg",
+        "rows": "5",
+        "cols": "2"
+    },
+    "tabs": {
+        "type": "fixed",
+        "hcount": "0"
+    },
+    "cuts": {
+        "type": "vcuts",
+        "layer": "Edge.Cuts"
+    },
+    "framing": {
+        "type": "railstb",
+        "vspace": "0mm",
+        "width": "6mm",
+        "fillet": "1mm"
+    },
+    "text": {
+        "type": "simple",
+        "layer": "Cmts.User",
+        "orientation": "90deg",
+        "text": "CNC",
+        "anchor": "c"
+    },
+    "page": {
+        "anchor": "tl",
+        "posx": "20mm"
+    },
+    "post": {
+        "script": "post_process.py"
+    }
+}

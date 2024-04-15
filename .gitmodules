@@ -1,0 +1,4 @@
+[submodule "firmware/esp-at"]
+	path = firmware/esp-at
+	url = https://github.com/espressif/esp-at.git
+	branch = release/v4.0.0.0

@@ -1,0 +1,25 @@
+from kikit.units import mm
+from kikit.common import toKiCADPoint
+
+def kikitPostprocess( panel, arg ) :
+	minx, miny, maxx, maxy = panel.panelBBox()
+	position = toKiCADPoint( ( minx + 5 * mm, miny + 3 * mm ) )
+	panel.addNPTHole( position, 2 * mm, paste = False )
+	position = toKiCADPoint( ( maxx - 10 * mm, miny + 3 * mm ) )
+	panel.addNPTHole( position, 2 * mm, paste = False )
+	position = toKiCADPoint( ( minx + 5 * mm, maxy - 3 * mm ) )
+	panel.addNPTHole( position, 2 * mm, paste = False )
+	position = toKiCADPoint( ( maxx - 5 * mm, maxy - 3 * mm ) )
+	panel.addNPTHole( position, 2 * mm, paste = False )
+	position = toKiCADPoint( ( minx + 10 * mm, miny + 3.85 * mm ) )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = False, paste = True )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = True, paste = False )
+	position = toKiCADPoint( ( maxx - 15 * mm, miny + 3.85 * mm ) )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = False, paste = True )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = True, paste = False )
+	position = toKiCADPoint( ( minx + 10 * mm, maxy - 3.85 * mm ) )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = False, paste = True )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = True, paste = False )
+	position = toKiCADPoint( ( maxx - 10 * mm, maxy - 3.85 * mm ) )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = False, paste = True )
+	panel.addFiducial( position, 1 * mm, 3 * mm, bottom = True, paste = False )
